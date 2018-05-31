@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#CD2626</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#868686</color>
+    <color name="colorLightGrey">#c2c2c2</color>
+    <color name="colorDimGrey">#4d4d4d</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorTDimGrey">#ba000000</color>
+    <color name="colorTLightGrey">#7dd2d2d2</color>
+
+
+    <!-- bottom navigation -->
+    <color name="bottom_navigation_bg_color">#c8000000</color>
+    <color name="bottom_navigation_text_normal_color">#808080</color>
+    <color name="bottom_navigation_text_selected_color">#ffffff</color>
+
+    <!-- drawerLayout navigation -->
+
+
+    <!-- search item -->
+    <color name="search_item_text_color">#403d3d</color>
+    <color name="search_item_bg_color">#e6e6e6</color>
+
+</resources>

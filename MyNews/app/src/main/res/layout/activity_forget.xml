@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/iv_forget_go_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:src="@drawable/go_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="重置密码"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="1dp"
+                    android:src="@drawable/account" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_forget_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="账号"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:met_clearButton="true"
+                    app:met_hideUnderline="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTLightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="1dp"
+                    android:src="@drawable/phone" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_forget_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="手机号码"
+                    android:singleLine="true"
+                    android:inputType="phone"
+                    android:textSize="14sp"
+                    app:met_clearButton="true"
+                    app:met_hideUnderline="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTLightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/password" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_forget_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="密码"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    app:met_clearButton="true"
+                    app:met_hideUnderline="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTLightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/password" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_forget_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="确认密码"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    app:met_clearButton="true"
+                    app:met_hideUnderline="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTLightGrey" />
+
+            <Button
+                android:id="@+id/btn_forget_enter"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="重置" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

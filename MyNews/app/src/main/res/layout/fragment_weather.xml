@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_weather_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDimGrey"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/iv_weather_category"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:padding="6dp"
+                android:src="@drawable/category_white" />
+
+            <TextView
+                android:id="@+id/tv_weather_county"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="City"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_weather_switchover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="切换"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smart_refresh_layout_weather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableHeaderTranslationContent="false">
+
+            <com.scwang.smartrefresh.header.MaterialHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_weather_cond"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="15dp" />
+
+                            <TextView
+                                android:id="@+id/tv_weather_degree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="-℃"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="50sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_sign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:text="更新"
+                                android:textColor="@color/colorWhite" />
+
+                            <TextView
+                                android:id="@+id/tv_weather_updatetime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_toRightOf="@id/tv_sign"
+                                android:text="00:00"
+                                android:textColor="@color/colorWhite" />
+
+                            <TextView
+                                android:id="@+id/tv_weather_cond"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text=" - "
+                                android:textColor="@color/colorWhite"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tv_weather_wind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_toLeftOf="@id/tv_weather_cond"
+                                android:text=" - "
+                                android:textColor="@color/colorWhite"
+                                android:textSize="20sp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:background="@color/colorTDimGrey"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="天气预报"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_weather_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:background="@color/colorTDimGrey"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="空气质量"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|bottom"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_weather_aqi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="40sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="AQI指数"
+                                    android:textColor="@color/colorWhite" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|bottom"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_weather_pm25"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="40sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="PM2.5指数"
+                                    android:textColor="@color/colorWhite" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:background="@color/colorTDimGrey"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="生活建议"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tv_weather_suggest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>
