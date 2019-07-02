@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Re News</string>
+    <!-- welcome activity -->
+    <string name="welcome_tv_sign">欢迎界面</string>
+    <string name="welcome_tv_pass">跳过 ></string>
+
+    <string name="person_tv_login">登录/注册</string>
+
+    <!-- drawer layout -->
+    <string name="drawer_layout_tv_user_net_name_update">%1$s</string>
+    <string name="drawer_layout_tv_option_index">首页</string>
+    <string name="drawer_layout_tv_option_weather">天气</string>
+    <string name="drawer_layout_tv_option_person">个人</string>
+    <string name="drawer_layout_tv_option_favourite">我的收藏</string>
+    <string name="drawer_layout_tv_option_about">关于我们</string>
+    <string name="drawer_layout_tv_option_quit">退出</string>
+
+    <!-- tab bar -->
+    <string name="tab_bar_tv_home">首页</string>
+    <string name="tab_bar_tv_weather">天气</string>
+    <string name="tab_bar_tv_person">个人</string>
+
+    <string name="about_tv_info">开发者：GanGuoZhu\n\n联系方式：459031754@qq.com</string>
+</resources>

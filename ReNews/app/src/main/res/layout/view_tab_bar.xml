@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/tab_bar_bg_color"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_tab_bar_home"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_tab_bar_home"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/tab_bar_iv_home_status" />
+
+        <TextView
+            android:id="@+id/tv_tab_bar_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_bar_tv_home"
+            android:textColor="@drawable/tab_bar_tv_status"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_tab_bar_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_tab_bar_weather"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/tab_bar_iv_weather_status" />
+
+        <TextView
+            android:id="@+id/tv_tab_bar_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_bar_tv_weather"
+            android:textColor="@drawable/tab_bar_tv_status"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_tab_bar_person"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_tab_bar_person"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/tab_bar_iv_person_status" />
+
+        <TextView
+            android:id="@+id/tv_tab_bar_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_bar_tv_person"
+            android:textColor="@drawable/tab_bar_tv_status"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</LinearLayout>
