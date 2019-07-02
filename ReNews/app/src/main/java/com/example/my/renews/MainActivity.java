@@ -9,6 +9,8 @@ import com.example.my.renews.home.HomeFragment;
 import com.example.my.renews.person.PersonFragment;
 import com.example.my.renews.weather.WeatherFragment;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -21,9 +23,7 @@ public class MainActivity extends SupportActivity {
     private static final int HOME_FRAGMENT = 0;
     private static final int WEATHER_FRAGMENT = 1;
     private static final int PERSON_FRAGMENT = 2;
-
-    @BindView(R.id.fl_container)
-    FrameLayout mFrameLayout;
+    private SupportFragment[] mFragments = new SupportFragment[3];
 
 //    @BindViews({R.id.ll_tab_bar_home, R.id.ll_tab_bar_weather, R.id.ll_tab_bar_person})
 //    List<LinearLayout> tabBarLlList;
@@ -34,7 +34,14 @@ public class MainActivity extends SupportActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         if (savedInstanceState == null) {
-            loadRootFragment(R.id.fl_container, HomeFragment.newInstance());
+            mFragments[HOME_FRAGMENT] = HomeFragment.newInstance();
+            mFragments[WEATHER_FRAGMENT] = WeatherFragment.newInstance();
+            mFragments[PERSON_FRAGMENT] = PersonFragment.newInstance();
+
+            loadMultipleRootFragment(R.id.fl_container, HOME_FRAGMENT,
+                    mFragments[HOME_FRAGMENT],
+                    mFragments[WEATHER_FRAGMENT],
+                    mFragments[PERSON_FRAGMENT]);
         }
         initView();
     }
@@ -43,63 +50,23 @@ public class MainActivity extends SupportActivity {
 
     }
 
-    private void showView(int to) {
-        SupportFragment supportFragment = null;
-        switch (to) {
-            case HOME_FRAGMENT:
-                supportFragment = findFragment(HomeFragment.class);
-                if (null == supportFragment) {
-                    start(HomeFragment.newInstance());
-                } else {
-                    showHideFragment(supportFragment);
-                }
-                break;
-            case WEATHER_FRAGMENT:
-                supportFragment = findFragment(WeatherFragment.class);
-                if (null == supportFragment) {
-                    start(WeatherFragment.newInstance());
-                } else {
-                    showHideFragment(supportFragment);
-                }
-                break;
-            case PERSON_FRAGMENT:
-                supportFragment = findFragment(PersonFragment.class);
-                if (null == supportFragment) {
-                    start(PersonFragment.newInstance());
-                } else {
-                    showHideFragment(supportFragment);
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public FragmentAnimator onCreateFragmentAnimator() {
-        // 设置默认Fragment动画  默认竖向(和安卓5.0以上的动画相同)
-        return super.onCreateFragmentAnimator();
-        // 设置横向(和安卓4.x动画相同)
-//        return new DefaultHorizontalAnimator();
-        // 设置自定义动画
-//        return new FragmentAnimator(enter, exit, popEnter, popExit);
-    }
-
     @OnClick({R.id.ll_tab_bar_home, R.id.ll_tab_bar_weather, R.id.ll_tab_bar_person})
     public void onViewClicked(View view) {
+        int to = HOME_FRAGMENT;
         switch (view.getId()) {
             case R.id.ll_tab_bar_home:
-                showView(HOME_FRAGMENT);
+                to = HOME_FRAGMENT;
                 break;
             case R.id.ll_tab_bar_weather:
-                showView(WEATHER_FRAGMENT);
+                to = WEATHER_FRAGMENT;
                 break;
             case R.id.ll_tab_bar_person:
-                showView(PERSON_FRAGMENT);
+                to = PERSON_FRAGMENT;
                 break;
             default:
                 break;
         }
+        showHideFragment(mFragments[to]);
     }
 
     @Override
