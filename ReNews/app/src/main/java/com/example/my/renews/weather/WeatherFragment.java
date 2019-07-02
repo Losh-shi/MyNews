@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.my.renews.MainActivity;
 import com.example.my.renews.R;
+import com.example.my.renews.home.HomeFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -17,6 +18,10 @@ import me.yokeyword.fragmentation.SupportFragment;
 public class WeatherFragment extends SupportFragment {
     private static final String TAG = MainActivity.class.getSimpleName();
     private Unbinder unbinder;
+
+    public static WeatherFragment newInstance() {
+        return new WeatherFragment();
+    }
 
     @Nullable
     @Override
