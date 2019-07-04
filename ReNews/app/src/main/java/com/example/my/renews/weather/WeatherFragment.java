@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.example.my.renews.MainActivity;
 import com.example.my.renews.R;
-import com.example.my.renews.home.HomeFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

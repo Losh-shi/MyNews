@@ -1,4 +1,4 @@
-package com.example.my.renews.home;
+package com.example.my.renews.home.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

@@ -2,31 +2,35 @@ package com.example.my.renews;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.my.renews.home.HomeFragment;
+import com.example.my.renews.home.view.HomeFragment;
 import com.example.my.renews.person.PersonFragment;
 import com.example.my.renews.weather.WeatherFragment;
 
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.yokeyword.fragmentation.SupportActivity;
 import me.yokeyword.fragmentation.SupportFragment;
-import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 public class MainActivity extends SupportActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int HOME_FRAGMENT = 0;
     private static final int WEATHER_FRAGMENT = 1;
     private static final int PERSON_FRAGMENT = 2;
-    private SupportFragment[] mFragments = new SupportFragment[3];
 
-//    @BindViews({R.id.ll_tab_bar_home, R.id.ll_tab_bar_weather, R.id.ll_tab_bar_person})
-//    List<LinearLayout> tabBarLlList;
+    private SupportFragment[] mFragments = new SupportFragment[3];
+    private int mPosition = HOME_FRAGMENT;
+
+    @BindViews({R.id.iv_tab_bar_home, R.id.iv_tab_bar_weather, R.id.iv_tab_bar_person})
+    List<ImageView> mTabBarIvList;
+
+    @BindViews({R.id.tv_tab_bar_home, R.id.tv_tab_bar_weather, R.id.tv_tab_bar_person})
+    List<TextView> mTabBarTvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,39 +38,53 @@ public class MainActivity extends SupportActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         if (savedInstanceState == null) {
-            mFragments[HOME_FRAGMENT] = HomeFragment.newInstance();
-            mFragments[WEATHER_FRAGMENT] = WeatherFragment.newInstance();
-            mFragments[PERSON_FRAGMENT] = PersonFragment.newInstance();
-
-            loadMultipleRootFragment(R.id.fl_container, HOME_FRAGMENT,
-                    mFragments[HOME_FRAGMENT],
-                    mFragments[WEATHER_FRAGMENT],
-                    mFragments[PERSON_FRAGMENT]);
+            initData();
         }
         initView();
     }
 
-    private void initView() {
+    private void initData() {
+        mFragments[HOME_FRAGMENT] = HomeFragment.newInstance();
+        mFragments[WEATHER_FRAGMENT] = WeatherFragment.newInstance();
+        mFragments[PERSON_FRAGMENT] = PersonFragment.newInstance();
 
+        loadMultipleRootFragment(R.id.fl_container, HOME_FRAGMENT,
+                mFragments[HOME_FRAGMENT],
+                mFragments[WEATHER_FRAGMENT],
+                mFragments[PERSON_FRAGMENT]);
+    }
+
+    private void initView() {
+        updateTabBarStatus(mPosition);
     }
 
     @OnClick({R.id.ll_tab_bar_home, R.id.ll_tab_bar_weather, R.id.ll_tab_bar_person})
     public void onViewClicked(View view) {
-        int to = HOME_FRAGMENT;
+        mPosition = HOME_FRAGMENT;
         switch (view.getId()) {
             case R.id.ll_tab_bar_home:
-                to = HOME_FRAGMENT;
+                mPosition = HOME_FRAGMENT;
                 break;
             case R.id.ll_tab_bar_weather:
-                to = WEATHER_FRAGMENT;
+                mPosition = WEATHER_FRAGMENT;
                 break;
             case R.id.ll_tab_bar_person:
-                to = PERSON_FRAGMENT;
+                mPosition = PERSON_FRAGMENT;
                 break;
             default:
                 break;
         }
-        showHideFragment(mFragments[to]);
+        showHideFragment(mFragments[mPosition]);
+        updateTabBarStatus(mPosition);
+    }
+
+    private void updateTabBarStatus(int position) {
+        for (int i = 0; i < mTabBarIvList.size(); i++) {
+            mTabBarIvList.get(i).setSelected(false);
+            mTabBarTvList.get(i).setSelected(false);
+        }
+        mTabBarIvList.get(position).setSelected(true);
+        mTabBarTvList.get(position).setSelected(true);
     }
 
     @Override
