@@ -1,33 +1,23 @@
 package com.example.my.renews.home.view;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.example.my.renews.MainActivity;
 import com.example.my.renews.R;
+import com.example.my.renews.base.BaseFragment;
+import com.example.my.renews.main.MainActivity;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-import me.yokeyword.fragmentation.SupportFragment;
-
-public class HomeFragment extends SupportFragment {
+public class HomeFragment extends BaseFragment {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private Unbinder unbinder;
 
     public static HomeFragment newInstance() {
+        // todo: Fragmentation 保存数据
         return new HomeFragment();
     }
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
+    protected int getLayoutViewId() {
+        return R.layout.fragment_home;
     }
 
     @Override
@@ -53,11 +43,5 @@ public class HomeFragment extends SupportFragment {
 //            mFragments[WEATHER_FRAGMENT] = findFragment(WeatherFragment.class);
 //            mFragments[PERSON_FRAGMENT] = findFragment(PersonFragment.class);
 //        }
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 }
