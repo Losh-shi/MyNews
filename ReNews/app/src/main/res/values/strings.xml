@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Re News</string>
     <!-- welcome activity -->
-    <string name="welcome_tv_sign">欢迎界面</string>
-    <string name="welcome_tv_pass">跳过 ></string>
+    <string name="welcome_tv_guide">欢迎</string>
+    <string name="welcome_tv_advertising">广告缓存</string>
+    <string name="welcome_tv_skip">跳过 ></string>
 
     <string name="person_tv_login">登录/注册</string>
 
